@@ -26,7 +26,7 @@ example_list_function()
 def manage_students():
     students = ['Ben', 'Jody', 'Andy']
     first_student = students[1]
-    last_student = students[2]
+    last_student = students[-1] # use -1 to reference last student
     return(first_student, last_student)
 
 # Call the function and print the result
@@ -43,7 +43,7 @@ def combine_foods():
    foods = ('banana', 'pasta', 'chocolate')
    meal = ""
    for food in foods:
-      meal += food
+      meal = " ".join(foods) #will join foods together with a space
    return(meal)
 
 # Call the function and print the result
@@ -97,7 +97,7 @@ def list_home_town_items():
     home_town_items = []
 
     for key, value in home_town.items():
-        home_town_items.extend([f"{key} = {value}"])
+        home_town_items.append([f"{key} = {value}"]) #Iury suggested .append instead of .extend
     return(home_town_items)
 
 # Call the function and print the result
@@ -123,7 +123,7 @@ print('Exercise 6:', create_awesome_students())
 
 def filter_foods_with_a():
     foods = ('steak', 'french fries', 'beer')
-    foods_with_an_a = [food for food in foods if 'a' in food]
+    foods_with_an_a = [food for food in foods if 'a' in food.lower()] #checks for 'a' and 'A'
     return(foods_with_an_a)
 
 # Call the function and print the result
